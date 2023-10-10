@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="menutoggle"></div>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg: #333;">
+                <a href="#">
+                    <div class="icon"><ion-icon name="logo-apple"></ion-icon></div>
+                    <div class="text">Muzaffar Gujjar</div>
+                </a>
+            </li>
+            <div class="menulist">
+                <li style="--bg: #f44336;" class="active">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                        <div class="text">Home</div>
+                    </a>
+                </li>
+                <li style="--bg: #ffa117;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="person-outline"></ion-icon></div>
+                        <div class="text">Profile</div>
+                    </a>
+                </li>
+                <li style="--bg: #0fc70f;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="chatbubble-outline"></ion-icon></div>
+                        <div class="text">Inbox</div>
+                    </a>
+                </li>
+                <li style="--bg: #2196f3;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="chatbubble-outline"></ion-icon></div>
+                        <div class="text">Analytics</div>
+                    </a>
+                </li>
+                <li style="--bg: #b145e9;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="cart-outline"></ion-icon></div>
+                        <div class="text">Order</div>
+                    </a>
+                </li>
+                <li style="--bg: #c91e63;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="cog-outline"></ion-icon></div>
+                        <div class="text">Setting</div>
+                    </a>
+                </li>
+            </div>
+            <div class="bottom">
+                <li style="--bg: #333;">
+                    <a href="#">
+                        <div class="icon">
+                        <div class="imgbx">
+                            <img src="./Screenshot (3118).png" alt="">
+                        </div>
+                    </div>
+                        <div class="text">Muzaffar Gujjar</div>
+
+                    </a>
+                </li>
+                <li style="--bg: #333;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                        <div class="text">Logout</div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let menutoggle = document.querySelector('.menutoggle');
+        let sidebar = document.querySelector('.sidebar')
+
+        menutoggle.onclick = function(){
+            menutoggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+
+        let menulist = document.querySelectorAll('.menulist li');
+        function activeLink(){
+            menulist.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+
+        menulist.forEach((item)=>
+        item.addEventListener('click', activeLink));
+    </script>
+
+
+</body>
+
+</html>
